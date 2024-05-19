@@ -22,6 +22,7 @@ export const fetchFilmAction = createAsyncThunk<Film, {filmId: string}, {
   'data/fetchFilm',
   async ({filmId}, {extra: api}) => {
     const {data} = await api.get<Film>(`${APIRoute.Films}/${filmId}`);
+    console.log(data)
     return data;
   },
 );
@@ -113,6 +114,7 @@ export const loginAction = createAsyncThunk<void, AuthData, {
   async ({ email, password}, {dispatch, extra: api}) => {
     const {data: {token}} = await api.post<UserData>(APIRoute.Login, {email, password});
     saveToken(token);
+    console.log(token)
     dispatch(redirectToRoute(AppRoute.Main));
   },
 );

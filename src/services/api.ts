@@ -16,7 +16,7 @@ const shouldDisplayError = (response: AxiosResponse) => !!StatusCodeMapping[resp
 
 const shouldUnauthorizedError = (response: AxiosResponse) => response.status === StatusCodes.UNAUTHORIZED;
 
-const BACKEND_URL = 'https://13.design.pages.academy/wtw';
+const BACKEND_URL = 'https://13.design.htmlacademy.pro/wtw';
 const REQUEST_TIMEOUT = 5000;
 
 export const createAPI = (): AxiosInstance => {
